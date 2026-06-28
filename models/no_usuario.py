@@ -1,5 +1,7 @@
-class NoUsuario:
+from models.usuario import Usuario
 
-    def __init__(self, usuario):
-        self.usuario = usuario
-        self.proximo = None
+
+class NoUsuario:
+    def __init__(self, usuario: Usuario) -> None:
+        self.usuario: Usuario = usuario
+        self.proximo: NoUsuario | None = None
