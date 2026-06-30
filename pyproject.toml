@@ -10,7 +10,7 @@ version = "0.1.0"
 # =========================================================================== #
 [build-system]
 build-backend = "setuptools.build_meta"
-requires = ["setuptools>=70", "wheel"]
+requires = ["setuptools", "wheel"]
 
 [tool.setuptools]
 include-package-data = true
@@ -20,7 +20,7 @@ package-dir = {"" = "."}
 where = ["."]
 
 [dependency-groups]
-dev = ["pytest>=8.3.0", "pytest-cov>=5.0.0", "ruff>=0.15.20", "taskipy>=1.14.0", "ty>=0.0.50"]
+dev = ["pytest>=9.1.1", "pytest-cov>=7.1.0", "ruff>=0.15.20", "taskipy>=1.14.1", "ty>=0.0.55"]
 
 [tool.uv]
 package = true
@@ -29,15 +29,14 @@ package = true
 # =========================================================================== #
 [tool.ruff]
 fix = true
+indent-width = 4
 line-length = 120
 show-fixes = true
 target-version = "py313"
 
 [tool.ruff.lint]
-# select = ["E", "F", "I", "UP", "B", "SIM"]
-ignore = ["ANN101", "ANN102", "D100", "D101", "D102", "D103", "D107", "D413", "T201"]
+ignore = ["D100", "D101", "D102", "D103", "D104", "D107", "D203", "D213", "D413", "DTZ011", "ERA001", "T201"]
 select = ["ALL"]
-# # preview = true  # Testar regras beta do Ruff
 
 [tool.ruff.lint.per-file-ignores]
 "tests/**/*.py" = ["ANN201", "S101"]
@@ -46,10 +45,9 @@ select = ["ALL"]
 indent-style = "space"
 line-ending = "lf"
 quote-style = "double"
-# preview = true  # Testar regras beta do Ruff
 
 # [tool.ruff.lint.isort]
-# known-first-party = ["fake_news_detect"]
+# known-first-party = ["sistema-controle-acesso"]
 # =========================================================================== #
 #                              Testes (Pytest)                                #
 # =========================================================================== #

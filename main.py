@@ -14,9 +14,9 @@ def menu() -> None:  # noqa: C901, PLR0912, PLR0915
         # USUÁRIO NÃO LOGADO
         # =====================================================================
         if usuario_logado is None:
-            print("\n====================")
+            print("\n" + "=" * 20)
             print(" SISTEMA DE ACESSO ")
-            print("====================")
+            print("=" * 20)
             print("1 - Login")
             print("0 - Sair")
             opcao: str = input("\nEscolha: ")
@@ -31,9 +31,9 @@ def menu() -> None:  # noqa: C901, PLR0912, PLR0915
         # ADMINISTRADOR
         # =====================================================================
         elif usuario_logado.perfil == "Administrador":
-            print("\n====================")
+            print("\n" + "=" * 20)
             print(" SISTEMA DE ACESSO ")
-            print("====================")
+            print("=" * 20)
             print(f"Usuário: {usuario_logado.nome}")
             print(f"Perfil: {usuario_logado.perfil}")
             print("\n1 - Cadastrar Usuário")
@@ -74,9 +74,9 @@ def menu() -> None:  # noqa: C901, PLR0912, PLR0915
         # GERENTE
         # =====================================================================
         elif usuario_logado.perfil == "Gerente":
-            print("\n====================")
+            print("\n" + "=" * 20)
             print(" SISTEMA DE ACESSO ")
-            print("====================")
+            print("=" * 20)
             print(f"Usuário: {usuario_logado.nome}")
             print(f"Perfil: {usuario_logado.perfil}")
             print("\n1 - Cadastrar Arquivo")
@@ -105,9 +105,9 @@ def menu() -> None:  # noqa: C901, PLR0912, PLR0915
         # FUNCIONÁRIO
         # =====================================================================
         elif usuario_logado.perfil == "Funcionario":
-            print("\n====================")
+            print("\n" + "=" * 20)
             print(" SISTEMA DE ACESSO ")
-            print("====================")
+            print("=" * 20)
             print(f"Usuário: {usuario_logado.nome}")
             print(f"Perfil: {usuario_logado.perfil}")
             print("\n1 - Listar Arquivos")
