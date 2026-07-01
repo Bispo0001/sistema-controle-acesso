@@ -1,5 +1,9 @@
+from typing import TYPE_CHECKING
+
 from models.no_usuario import NoUsuario
-from models.usuario import Usuario
+
+if TYPE_CHECKING:
+    from models.usuario import Usuario
 
 
 class ListaUsuarios:
