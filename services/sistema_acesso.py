@@ -59,6 +59,22 @@ class SistemaAcesso:
         print("Login inválido!")
         return None
 
+    def esqueci_senha(self) -> None:
+        print("\n=== RECUPERAÇÃO DE SENHA ===")
+        login: str = input("Login: ")
+        usuario: Usuario | None = self.usuarios.buscar_login(login)
+        if usuario is None:
+            print("Usuário não encontrado.")
+            return
+        nova_senha: str = input("Nova senha: ")
+        confirmacao: str = input("Confirme a nova senha: ")
+        if nova_senha != confirmacao:
+            print("As senhas não conferem.")
+            return
+        usuario.redefinir_senha(nova_senha)
+        self.registrar_log(f"Senha redefinida para {usuario.nome}.")
+        print("Senha redefinida com sucesso!")
+
     def cadastrar_arquivo(self, usuario: Usuario) -> None:
         if not self.possui_permissao(usuario, "criar"):
             print("Acesso negado!")

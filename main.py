@@ -18,10 +18,13 @@ def menu() -> None:  # noqa: C901, PLR0912, PLR0915
             print(" SISTEMA DE ACESSO ")
             print("=" * 20)
             print("1 - Login")
+            print("2 - Esqueci a senha")
             print("0 - Sair")
             opcao: str = input("\nEscolha: ")
             if opcao == "1":
                 usuario_logado: Usuario | None = sistema.login()
+            elif opcao == "2":
+                sistema.esqueci_senha()
             elif opcao == "0":
                 print("Sistema encerrado.")
                 break

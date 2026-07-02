@@ -8,3 +8,6 @@ class Usuario:
         self.login: str = login
         self.senha: str = hashlib.sha256(senha.encode()).hexdigest()
         self.perfil: str = perfil
+
+    def redefinir_senha(self, nova_senha: str) -> None:
+        self.senha: str = hashlib.sha256(nova_senha.encode()).hexdigest()
